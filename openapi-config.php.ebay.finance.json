@@ -1,0 +1,14 @@
+{
+  "packageName": "sdk-ebay-rest-finance",
+  "composerVendorName": "macropage",
+  "composerProjectName": "sdk-ebay-rest-finance",
+  "artifactVersion": "2.3.2",
+  "invokerPackage": "macropage\\SDKs\\ebay\\rest\\finance",
+  "modelPackage": "Model",
+  "apiPackage": "API",
+  "variableNamingConvention": "camelCase",
+  "srcBasePath": "src",
+  "gitUserId": "macropage",
+  "gitRepoId": "sdk-ebay-rest-finance",
+  "validateSpec": false
+}
