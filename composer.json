@@ -1,6 +1,6 @@
 {
     "name": "macropage/sdk-ebay-rest-finance",
-    "version": "2.3.2",
+    "version": "1.4.0",
     "description": "This API is used to retrieve seller payouts and monetary transaction details related to those payouts.",
     "keywords": [
         "openapitools",
