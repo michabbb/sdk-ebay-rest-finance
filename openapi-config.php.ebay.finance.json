@@ -2,7 +2,7 @@
   "packageName": "sdk-ebay-rest-finance",
   "composerVendorName": "macropage",
   "composerProjectName": "sdk-ebay-rest-finance",
-  "artifactVersion": "2.3.2",
+  "artifactVersion": "1.9.0",
   "invokerPackage": "macropage\\SDKs\\ebay\\rest\\finance",
   "modelPackage": "Model",
   "apiPackage": "API",

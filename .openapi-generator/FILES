@@ -21,6 +21,7 @@ docs/Model/Payout.md
 docs/Model/PayoutInstrument.md
 docs/Model/PayoutSummaryResponse.md
 docs/Model/Payouts.md
+docs/Model/Reference.md
 docs/Model/SellerFundsSummaryResponse.md
 docs/Model/Transaction.md
 docs/Model/TransactionSummaryResponse.md
@@ -50,6 +51,7 @@ src/Model/Payout.php
 src/Model/PayoutInstrument.php
 src/Model/PayoutSummaryResponse.php
 src/Model/Payouts.php
+src/Model/Reference.php
 src/Model/SellerFundsSummaryResponse.php
 src/Model/Transaction.php
 src/Model/TransactionSummaryResponse.php
@@ -74,6 +76,7 @@ test/Model/PayoutInstrumentTest.php
 test/Model/PayoutSummaryResponseTest.php
 test/Model/PayoutTest.php
 test/Model/PayoutsTest.php
+test/Model/ReferenceTest.php
 test/Model/SellerFundsSummaryResponseTest.php
 test/Model/TransactionSummaryResponseTest.php
 test/Model/TransactionTest.php

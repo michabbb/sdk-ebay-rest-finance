@@ -1,6 +1,6 @@
 <?php
 /**
- * Fee
+ * Reference
  *
  * PHP version 7.3
  *
@@ -32,10 +32,10 @@ use \ArrayAccess;
 use \macropage\SDKs\ebay\rest\finance\ObjectSerializer;
 
 /**
- * Fee Class Doc Comment
+ * Reference Class Doc Comment
  *
  * @category Class
- * @description This type is used to display fees that are automatically deducted from seller payouts.
+ * @description This field is returned for NON_SALE_CHARGE transactions that contain non-transactional seller fees.
  * @package  macropage\SDKs\ebay\rest\finance
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +43,7 @@ use \macropage\SDKs\ebay\rest\finance\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
+class Reference implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Fee';
+    protected static $openAPIModelName = 'Reference';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,8 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => '\macropage\SDKs\ebay\rest\finance\Model\Amount',
-        'feeMemo' => 'string',
-        'feeType' => 'string'
+        'referenceId' => 'string',
+        'referenceType' => 'string'
     ];
 
     /**
@@ -73,9 +72,8 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amount' => null,
-        'feeMemo' => null,
-        'feeType' => null
+        'referenceId' => null,
+        'referenceType' => null
     ];
 
     /**
@@ -105,9 +103,8 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount',
-        'feeMemo' => 'feeMemo',
-        'feeType' => 'feeType'
+        'referenceId' => 'referenceId',
+        'referenceType' => 'referenceType'
     ];
 
     /**
@@ -116,9 +113,8 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
-        'feeMemo' => 'setFeeMemo',
-        'feeType' => 'setFeeType'
+        'referenceId' => 'setReferenceId',
+        'referenceType' => 'setReferenceType'
     ];
 
     /**
@@ -127,9 +123,8 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount',
-        'feeMemo' => 'getFeeMemo',
-        'feeType' => 'getFeeType'
+        'referenceId' => 'getReferenceId',
+        'referenceType' => 'getReferenceType'
     ];
 
     /**
@@ -189,9 +184,8 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['feeMemo'] = $data['feeMemo'] ?? null;
-        $this->container['feeType'] = $data['feeType'] ?? null;
+        $this->container['referenceId'] = $data['referenceId'] ?? null;
+        $this->container['referenceType'] = $data['referenceType'] ?? null;
     }
 
     /**
@@ -219,73 +213,49 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets amount
+     * Gets referenceId
      *
-     * @return \macropage\SDKs\ebay\rest\finance\Model\Amount|null
+     * @return string|null
      */
-    public function getAmount()
+    public function getReferenceId()
     {
-        return $this->container['amount'];
+        return $this->container['referenceId'];
     }
 
     /**
-     * Sets amount
+     * Sets referenceId
      *
-     * @param \macropage\SDKs\ebay\rest\finance\Model\Amount|null $amount amount
+     * @param string|null $referenceId The identifier of the transaction as specified by the <strong>referenceType</strong>. For example, with a <strong>referenceType</strong> of <strong>item_id</strong>, the <strong>referenceId</strong> refers to a unique item. This item may have several <code>NON_SALE_CHARGE</code> transactions.
      *
      * @return self
      */
-    public function setAmount($amount)
+    public function setReferenceId($referenceId)
     {
-        $this->container['amount'] = $amount;
+        $this->container['referenceId'] = $referenceId;
 
         return $this;
     }
 
     /**
-     * Gets feeMemo
+     * Gets referenceType
      *
      * @return string|null
      */
-    public function getFeeMemo()
+    public function getReferenceType()
     {
-        return $this->container['feeMemo'];
+        return $this->container['referenceType'];
     }
 
     /**
-     * Sets feeMemo
+     * Sets referenceType
      *
-     * @param string|null $feeMemo A description of the fee that was deducted from the seller payout.
+     * @param string|null $referenceType An enumeration value that identifies the reference type associated with the <strong>referenceId</strong>. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/finances/types/pay:ReferenceTypeEnum'>eBay API documentation</a>
      *
      * @return self
      */
-    public function setFeeMemo($feeMemo)
+    public function setReferenceType($referenceType)
     {
-        $this->container['feeMemo'] = $feeMemo;
-
-        return $this;
-    }
-
-    /**
-     * Gets feeType
-     *
-     * @return string|null
-     */
-    public function getFeeType()
-    {
-        return $this->container['feeType'];
-    }
-
-    /**
-     * Sets feeType
-     *
-     * @param string|null $feeType The enumeration value returned here indicates the type of fee that was deducted from the seller payout. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/finances/types/api:FeeTypeEnum'>eBay API documentation</a>
-     *
-     * @return self
-     */
-    public function setFeeType($feeType)
-    {
-        $this->container['feeType'] = $feeType;
+        $this->container['referenceType'] = $referenceType;
 
         return $this;
     }
